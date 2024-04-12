@@ -1,0 +1,14 @@
+{
+  "name": "send-emails",
+  "version": "1.0.0",
+  "description": "to send emails to axenta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JhonDevS",
+  "license": "ISC",
+  "dependencies": {
+    "@elasticemail/elasticemail-client": "github:elasticemail/elasticemail-js"
+  }
+}
