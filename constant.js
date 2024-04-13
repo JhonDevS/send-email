@@ -1,5 +1,7 @@
-export const constant = {
+const constant = {
   templatesName: {
     test: "test",
   }
 }
+
+module.exports = constant;
