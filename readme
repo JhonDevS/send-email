@@ -1,0 +1,8 @@
+# https://elasticemail.com/
+
+# Version of node to use v20.11.1.
+
+# To run:
+- npm install
+- npm run dev
+

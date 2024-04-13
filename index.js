@@ -1,22 +1,23 @@
-let ElasticEmail = require('@elasticemail/elasticemail-client');
+const ElasticEmail = require('@elasticemail/elasticemail-client');
+const constant = require('./constant');
 
-let defaultClient = ElasticEmail.ApiClient.instance;
+const defaultClient = ElasticEmail.ApiClient.instance;
 
-let apikey = defaultClient.authentications['apikey'];
-apikey.apiKey = "0BE811BBA27F40CC0C58B6445AE47FB377C92F279703E839A819D85F24818B79A800392CCBADB2CA06FCCED4717859DA"
+const apikey = defaultClient.authentications['apikey'];
+apikey.apiKey = process.env.KEY_API || ""
 
-let api = new ElasticEmail.EmailsApi()
+const api = new ElasticEmail.EmailsApi()
 
 const templatesApi = new ElasticEmail.TemplatesApi();
-const templateName = "test";
+const templateName = constant.templatesName.test;
 
 templatesApi.templatesByNameGet(templateName, (error, templateData, response) => {
   if (error) {
     console.error(error);
   } else {
-    let email = ElasticEmail.EmailMessageData.constructFromObject({
+    const email = ElasticEmail.EmailMessageData.constructFromObject({
       Recipients: [
-        new ElasticEmail.EmailRecipient("kennedyduque11@gmail.com")
+        new ElasticEmail.EmailRecipient("jhon.1701720506@ucaldas.edu.co")
       ],
       Content: {
         Body: templateData.Body,
